@@ -1,0 +1,396 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+  color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* centered video as the background, using position fixed
+	 so the position of the background video stays even when scrolling */
+#background-video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* search bar design */
+.rightnav {
+	width: 100%;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#search {
+	padding: 5px;
+	box-sizing: border-box;
+	width: 70%;
+	font-size: 17px;
+	border: 2px solid grey;
+	border-radius: 9px;
+}
+
+.rightnav input {
+		padding-left: 25px !important;
+		font-weight: bold;
+		color: black;
+		border-radius: 10px;
+		transition: 0.3s;
+}
+/* glowing search bar on hover */
+.rightnav input:hover {
+	box-shadow: inset 0px 0px 10px 5px rgba(255, 192, 203, 0.5),
+            0px 0px 10px 5px #FFC0CB,
+            inset 0px 0px 10px 5px rgba(255, 182, 193, 0.5),
+            0px 0px 10px 5px #FFB6C1,
+            inset 0px 0px 10px 5px rgba(255, 127, 80, 0.5),
+            0px 0px 10px 5px #FF7F50;
+	border: 1px solid rgb(245, 9, 245);
+}
+/* design when focused on the search bar */
+.rightnav input:focus {
+	background: radial-gradient(circle farthest-corner at 10% 20%, rgb(255, 94, 247) 17.8%, rgb(2, 245, 255) 100.2%);
+	box-shadow: inset 0px 0px 10px 5px rgba(255, 192, 203, 0.5),
+							0px 0px 10px 5px #ff69b4;
+}
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	padding: 15px;
+	font-size: 1rem;
+	/* background color for the navbar */
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(20px); /* blur effect for the header section */
+	background-blend-mode: darken;
+	background-size: cover;
+	z-index: 1; /* z-index so that other elements won't overlap with the header section, and it has a value of 1 so it will still be blurred
+								when the image is clicked */
+}
+/* magnifying glass icon for the search bar */
+.fa-magnifying-glass {
+	position: absolute; 
+	color: black;
+	right: 37%;
+	top: 35px;
+}
+.nav-list {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	font-weight: bold;
+	list-style: none;
+	/* text-shadow makes the nav-list looks like it is glowing */
+	text-shadow: 0px 0px 8px rgba(255, 105, 180, 0.9), 
+               0px 0px 12px rgba(255, 105, 180, 0.7), 
+               0px 0px 16px rgba(255, 105, 180, 0.5), 
+               0px 0px 20px rgba(255, 105, 180, 0.3);
+							
+}
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo img {
+	width: 180px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+/* when hovering the logo in the header section, it will rotate 360 degrees infinitely*/
+.logo img:hover  {
+	animation: rotate 1s linear infinite; /* syntax for the animation */
+}
+
+.nav-list li {
+	list-style: none;
+	padding: 26px 30px;
+	padding: 10px;
+}
+
+.nav-list li a {
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+/* design when hovering a navigation links (targetting the anchor tags) */
+.nav-list li a:hover {
+	background: linear-gradient(45deg, #ff6c89, #ff8c96);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.firstsection {
+	height: 400px;
+}
+
+.box-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	max-width: 80%;
+	margin: auto;
+	height: 80%;
+}
+/* design when hovering the paragraph and headers on the main section 
+(wrapped by a container so we can target everything inside the container) */
+.test-container:hover{
+	transform: scale(1.1);
+	text-shadow: 0 0 8px #ff007f,
+							 0 0 12px #ff007f,
+							 0 0 16px #ff007f;
+							 
+}
+.test-container:focus {
+	background: linear-gradient(to right, #4d88ff, #0056b3);
+	text-shadow: 0 0 8px #ff007f,
+							 0 0 12px #ff007f,
+							 0 0 16px #ff007f
+}
+/* Smooth transition when hovering off */
+/* elements that belong in test-container can be edited */
+.test-container {
+	transition: 0.3s ease;
+	cursor: text;		
+}
+.firsthalf {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;    
+}
+.secondhalf {
+	width: 30%;
+}
+
+.secondhalf img {
+	width: 70%;
+	border: 4px solid white;
+	border-radius: 150px;
+	display: block;
+	margin: auto;
+}
+
+.text-big {
+	font-family: 'Piazzolla', serif;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+.text-small {
+	font-size: 18px;
+	padding-top: 10px;
+}
+
+.btn {
+	padding: 8px 20px;
+	margin: 7px 0;
+	border: 2px solid white;
+	border-radius: 8px;
+	background: none;
+	color: white;
+	cursor: pointer;
+}
+
+.btn-sm {
+	padding: 6px 10px;
+	vertical-align: middle;
+}
+
+.section {
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 90%;
+	padding-left:5.3125rem;
+}
+
+.section-Left {
+	flex-direction: row-reverse;
+}
+
+.paras {
+	padding: 0px 65px;
+}
+
+.center {
+	text-align: center;
+}
+.thumbnail {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	gap: 2rem;
+}
+.thumbnail-container,
+.thumbnail-container1,
+.thumbnail-container2 {
+	position: relative; 
+	width: 200px;
+	aspect-ratio: 4 / 3;
+}
+
+.thumbnail-container img,
+.thumbnail-container1 img,
+.thumbnail-container2 img {
+	position: absolute; 
+	bottom:630px; 
+	right: 380px; 
+	width: 100%; 
+	height: 100%;
+	border-radius: 26px;
+	cursor: zoom-in;
+	transition: 0.3s;
+}
+
+
+.thumbnail-container img:hover,
+.thumbnail-container1 img:hover,
+.thumbnail-container2 img:hover {
+	transform: translateY(-10%);
+	box-shadow: 0 0 8px #8a2be2,
+							0 0 12px #9370DB,
+							0 0 16px #6A5ACD,
+							0 0 20px #800080,
+							0 0 24px #9932CC,
+							0 0 12px #8a2be2,
+							0 0 16px #9370DB,
+							0 0 20px #6A5ACD,
+							0 0 24px #800080,
+							0 0 28px #9932CC,
+							0 0 8px #8a2be2,
+							0 0 12px #9370DB,
+							0 0 16px #6A5ACD,
+							0 0 20px #800080,
+							0 0 24px #9932CC;
+}
+
+	
+/* display: none to hide the checkbox */
+.thumbnail input[type="checkbox"] {
+	display: none;
+}
+
+/* when the checkbox is checked by clicking the image, it will have these properties */
+.thumbnail-container input:checked + label img,
+.thumbnail-container1 input:checked + label img,
+.thumbnail-container2 input:checked + label img {
+	transform: scale(1.5);
+	width: 70%;
+	height: 70%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border-radius: 26px;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	box-shadow: 0 0 8px #8a2be2,
+							0 0 12px #9370DB,
+							0 0 16px #6A5ACD,
+							0 0 20px #800080,
+							0 0 24px #9932CC,
+							0 0 12px #8a2be2,
+							0 0 16px #9370DB,
+							0 0 20px #6A5ACD,
+							0 0 24px #800080,
+							0 0 28px #9932CC,
+							0 0 8px #8a2be2,
+							0 0 12px #9370DB,
+							0 0 16px #6A5ACD,
+							0 0 20px #800080,
+							0 0 24px #9932CC;
+	cursor: zoom-out
+}
+/* Blur the screen when the checkbox (which is our image) is checked */
+.thumbnail-container input:checked ~ .blur-screen,
+.thumbnail-container1 input:checked ~ .blur-screen,
+.thumbnail-container2 input:checked ~ .blur-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9998; 
+	backdrop-filter: blur(5px); 
+}
+.blur-screen {
+	transition: 0.3s
+}
+.text-footer {
+	text-align: center;
+	padding: 30px 0;
+	font-family: 'Ubuntu', sans-serif;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	transition: 0.3s;
+	cursor: pointer;
+	font-weight: bold;
+	text-shadow: 0px 0px 8px orangered,
+							 0px 0px 12px orangered,
+							 0px 0px 16px orangered,
+							 0px 0px 20px orangered;
+
+}
+footer {
+	text-align: center;
+	padding: 15px;
+	backdrop-filter: blur(10px);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+/* animation delays so that the elements in the main section appears one by one */
+.firstsection.animation {
+	animation-delay: 0.5s
+}
+.secondsection.animation {
+	animation-delay: 1s
+}
+.section.animation {
+	animation-delay: 1.5s
+}
+/* made an animation class so that I don't have to declare multiple classes
+that handles the same animation */
+.animation {
+	opacity: 0;
+	transform: translateY(30px);
+	animation: moveup 0.5s linear forwards
+}
+
+/* these handles the animations */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes moveup {
+	0% {
+		opacity: 0;
+		transform: translateY(0px)
+	}
+	100% {
+		opacity: 1; 
+		transform: translateY(30px);
+	}
+}
